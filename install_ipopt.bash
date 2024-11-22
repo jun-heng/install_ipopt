@@ -79,7 +79,7 @@ install_ipopt()
     ./get.Blas    
     cd ../Lapack  
     ./get.Lapack  
-    cd ../Mumps  
+    cd ../Mumps
     ./get.Mumps  
     cd ../Metis  
     ./get.Metis 
@@ -89,10 +89,9 @@ install_ipopt()
     cd ..
     cd ..
     mkdir build  && cd build 
-    ../configure --prefix /usr/local 2>&1 | grep ...
-    make -j$(nproc) 2>&1 | grep ...  # filter error messages written to stderr 
-    make test > /dev/null
-    sudo make install > /dev/null
+    ../configure  
+    make -j4  
+    make install  
     sudo cp -a include/* /usr/include/.  
     sudo cp -a lib/* /usr/lib/.  
     cd ../..
